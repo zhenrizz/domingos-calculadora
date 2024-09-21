@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guguinha</title>
+    <style>
+        body {
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guguinha gosta de dar a bunda?</h1>
+    <button id="sim">Sim</button>
+    <button id="nao">Não</button>
+
+    <script>
+        document.getElementById('sim').onclick = function() {
+            window.open('https://youtu.be/d7BpBAL2ztc', '_blank');
+        };
+
+        document.getElementById('nao').onclick = function() {
+            window.location.href = 'https://example.com'; // URL de teletransporte
+        };
+    </script>
+</body>
+</html>
