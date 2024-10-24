@@ -3,43 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guguinha</title>
+    <title>Calculadora</title>
     <style>
         body {
-            background-color: pink;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
         }
-        button {
-            margin: 10px;
-            padding: 15px 30px;
-            font-size: 16px;
-            cursor: pointer;
+        .calculadora {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="button"], input[type="text"] {
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 250px;
+            margin-bottom: 10px;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
         }
     </style>
 </head>
 <body>
-    <h1>Guguinha gosta de dar a bunda?</h1>
-    <button id="sim">Sim</button>
-    <button id="nao">Não</button>
 
-    <script>
-        document.getElementById('sim').onclick = function() {
-            window.open('https://youtu.be/d7BpBAL2ztc', '_blank');
-        };
+<div class="calculadora">
+    <input type="text" id="display" disabled>
+    <br>
+    <input type="button" value="1" onclick="adicionarNumero('1')">
+    <input type="button" value="2" onclick="adicionarNumero('2')">
+    <input type="button" value="3" onclick="adicionarNumero('3')">
+    <br>
+    <input type="button" value="4" onclick="adicionarNumero('4')">
+    <input type="button" value="5" onclick="adicionarNumero('5')">
+    <input type="button" value="6" onclick="adicionarNumero('6')">
+    <br>
+    <input type="button" value="7" onclick="adicionarNumero('7')">
+    <input type="button" value="8" onclick="adicionarNumero('8')">
+    <input type="button" value="9" onclick="adicionarNumero('9')">
+    <br>
+    <input type="button" value="0" onclick="adicionarNumero('0')">
+    <input type="button" value="+" onclick="adicionarNumero('+')">
+    <input type="button" value="=" onclick="calcular()">
+    <br>
+    <input type="button" value="C" onclick="limpar()">
+    <div id="resultado"></div>
+</div>
 
-        document.getElementById('nao').onclick = function() {
-            // Efeito de teletransporte com animação
-            document.body.style.transition = 'opacity 0.5s';
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                window.location.href = 'https://example.com'; // URL de teletransporte
-            }, 500);
-        };
-    </script>
+<script>
+    function adicionarNumero(numero) {
+        document.getElementById('display').value += numero;
+    }
+
+    function calcular() {
+        let expressao = document.getElementById('display').value;
+        let resultado = eval(expressao);
+
+        if (expressao === "69+69") {
+            document.getElementById('resultado').innerHTML = "Domingos gay";
+        } else {
+            document.getElementById('resultado').innerHTML = "Resultado: " + resultado;
+        }
+    }
+
+    function limpar() {
+        document.getElementById('display').value = "";
+        document.getElementById('resultado').innerHTML = "";
+    }
+</script>
+
 </body>
 </html>
